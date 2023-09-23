@@ -54,6 +54,20 @@
     font-size: 18px;
 }
 
+
+/* items add button */
+
+.add {
+    background: black;
+    color: aliceblue;
+    font-size: 20px;
+    margin-top: 250px;
+    margin-left: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
 @media screen and (max-width:600px) {
     .borderHolder {
         width: 45%;

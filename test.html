@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Cart Example</title>
+</head>
+
+<body>
+    <h1>Shopping Cart</h1>
+    <ul id="product-list">
+        <!-- List of Nike products with Add to Cart buttons -->
+        <li data-id="1">
+            <p>Nike Shoe 1</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </li>
+        <li data-id="2">
+            <p>Nike Shoe 2</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </li>
+        <!-- Add more products here -->
+    </ul>
+    <h2>Shopping Cart Contents</h2>
+    <div id="cart">
+        <!-- Cart items will be displayed here -->
+    </div>
+
+    <script>
+        // Define an object to store product information, including image URLs
+        const products = {
+            1: {
+                name: 'Nike Shoe 1',
+                image: 'https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/07ad554d-077a-46c1-aa96-167ba177901d/custom-nike-dunk-low-by-you.png',
+            },
+            2: {
+                name: 'Nike Shoe 2',
+                image: 'https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/5b922005-f8fa-4cac-8465-aeeff2ce6a99/air-force-1-pltaform-shoes-dpz96J.png',
+            },
+            // Add more products here
+        };
+
+        // Add click event listeners to all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+
+        // Function to handle adding items to the cart
+        function addToCart(event) {
+            const product = event.target.parentElement;
+            const productId = product.getAttribute('data-id');
+            const productName = products[productId].name;
+            const productImage = products[productId].image;
+            const cartItem = {
+                id: productId,
+                name: productName,
+                image: productImage,
+            };
+
+            // Check if cart already exists in localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the item is already in the cart
+            const existingCartItemIndex = cart.findIndex(item => item.id === productId);
+
+            if (existingCartItemIndex !== -1) {
+                // If the item is already in the cart, update its quantity
+                cart[existingCartItemIndex].quantity += 1;
+            } else {
+                // Otherwise, add it to the cart
+                cartItem.quantity = 1;
+                cart.push(cartItem);
+            }
+
+            // Update the cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the displayed cart
+            displayCart();
+        }
+
+        // Function to handle deleting items from the cart
+        function deleteCartItem(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Find the index of the item with the given ID
+            const itemIndex = cart.findIndex(item => item.id === productId);
+
+            if (itemIndex !== -1) {
+                // Remove the item from the cart array
+                cart.splice(itemIndex, 1);
+            }
+
+            // Update the cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the displayed cart
+            displayCart();
+        }
+
+        // Function to display the cart contents
+        function displayCart() {
+            const cartContainer = document.getElementById('cart');
+            cartContainer.innerHTML = '';
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+
+                const cartImage = document.createElement('img');
+                cartImage.src = item.image;
+                cartImage.alt = item.name;
+                cartImage.style.width = '20%';
+
+                const cartInfo = document.createElement('div');
+                cartInfo.classList.add('cart-info');
+                cartInfo.textContent = `${item.name} x ${item.quantity}`;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteCartItem(item.id));
+
+                cartItem.appendChild(cartImage);
+                cartItem.appendChild(cartInfo);
+                cartItem.appendChild(deleteButton);
+                cartContainer.appendChild(cartItem);
+            });
+        }
+
+        // Display the initial cart contents when the page loads
+        displayCart();
+    </script>
+</body>
+
+</html>
