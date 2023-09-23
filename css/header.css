@@ -1,0 +1,142 @@
+body {
+    margin: 0%;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+#header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    background: rgb(255, 251, 245);
+}
+
+#header #mySidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    float: right;
+    font-size: 30px;
+    margin: 10px 100px;
+}
+
+.icons .fa,
+.fa-regular {
+    float: right;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.icons .fa:hover .tool-tip,
+.icons .fa-regular:hover .tool-tip {
+    visibility: visible;
+}
+
+.icons .fa:hover,
+.icons .fa-regular:hover {
+    transition-delay: .2s;
+    color: orange;
+}
+
+
+/* tool-tip */
+
+.tool-tip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    visibility: hidden;
+    opacity: 0.8;
+}
+
+.container {
+    background: black;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.container-tip {
+    background: black;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: rotate(45deg);
+    margin-top: -5px;
+    border-radius: 2px;
+}
+
+
+/* Nav */
+
+#header #mySidenav a {
+    margin: 0px 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+#header #mySidenav a:hover .link-under {
+    width: 100%;
+    transition: 0.5s;
+}
+
+#header #mySidenav .tool-tip {
+    transform: translateX(0);
+    transition: 0.1s;
+    margin-top: 15px;
+}
+
+#header #mySidenav a:hover .tool-tip {
+    transition-delay: 1.5s;
+    visibility: visible;
+    margin-top: 15px;
+    transform: translateX(50px) scale(1);
+    opacity: 0.4;
+}
+
+#header #mySidenav a:hover .container {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header #mySidenav a:hover {
+    transition-delay: 1s;
+    font-weight: bolder;
+}
+
+.link-under {
+    width: 0%;
+    background: black;
+    height: 2px;
+    margin-top: 10px;
+}
+
+
+/* logo */
+
+.logo {
+    margin-left: 20px;
+}
+
+.theme {
+    background-image: url(theme.png);
+    background-repeat: repeat-x;
+    background-size: contain;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #ccc;
+}
