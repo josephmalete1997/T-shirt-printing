@@ -21,13 +21,16 @@
             <i class="fa-solid fa-bars"></i>
             <img src="logo1.png" class="logo" width="20%">
             <!-------------------------------------->
+
             <div class="icons">
                 <i class='fa fa-cart-shopping' id="cart-open">
                     <div class="tool-tip">
                         <div class="container-tip"></div>
                         <div class="container">Basket</div>
                     </div>
+                    <span id="cart-count">0</span>
                 </i>
+
                 <i class='fa-regular fa-heart'>
                     <div class="tool-tip">
                         <div class="container-tip"></div>
@@ -60,14 +63,16 @@
     <div class="theme"></div>
 
     <div id="cart-container">
-        <h1>Enquiry basket
-            <hr>
+
+        <h1><i class="fa-solid fa-cart-arrow-down"></i> Enquiry basket
         </h1>
         <i class="fa fa-x" id="cart-close"></i>
-        <div id="cart-display">
+        <div id="cart-display" class="cart-display">
 
         </div>
     </div>
+    <script>
+    </script>
     <select class="sort">
         <option>Sort by length</option>
         <option>Sort by names[A-Z]</option>

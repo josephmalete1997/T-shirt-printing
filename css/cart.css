@@ -1,7 +1,8 @@
 #cart-container {
     width: 100%;
     height: 100%;
-    background: #ccc;
+    background: orange;
+    color: white;
     top: 0px;
     transition: 1s;
     display: none;
@@ -10,7 +11,13 @@
     align-items: center;
 }
 
+#cart-container h1 {
+    padding-left: 50px;
+}
+
 #cart-display {
+    background: white;
+    color: rgba(114, 114, 114, 0.8);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -58,16 +65,47 @@
     margin-top: 150px;
 }
 
+
+/* cart count */
+
+.icons .fa #cart-count {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    background: orange;
+    border: 2px solid white;
+    padding: 2px;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* --------- */
+
 @media screen and (max-width:600px) {
     .cart-item {
-        width: 40.5%;
-        height: 300px;
+        width: 90.5%;
+        height: 150px;
         margin: 5px;
-        border-radius: 10px;
+        border-radius: 5px;
         background: white;
         border: 0.5px solid #ccc;
-        background-position: center;
+        background-position: left;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 30%;
+    }
+    .cart-item button {
+        color: white;
+        background: black;
+        padding: 2px;
+        font-size: 18px;
+        margin-top: 20px;
     }
 }

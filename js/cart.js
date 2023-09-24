@@ -1,5 +1,6 @@
 import * as productImages from "./content.js";
 
+
 function addToCart() {
     const products = {
         a1: {
@@ -131,29 +132,64 @@ function addToCart() {
 
             cartItem.quantity = 1;
             cart.push(cartItem);
+            document.getElementById("cart-count").innerHTML = cart.length;
         }
 
         // Update the cart in localStorage
         localStorage.setItem('cart-display', JSON.stringify(cart));
-
+        document.getElementById("cart-count").innerHTML = cart.length;
         // Update the displayed cart
         displayCart();
         // alert(productId)
     }
+
     // Function to display the cart contents
 
+    //+++++++++
+    // loading removing
+    function loadingRemove() {
+        count++;
+        document.querySelector('#loaders').style.display = "flex";
+        document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+        return count;
+    }
+    // Function to handle deleting items from the cart
+    function deleteCartItem(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart-display')) || [];
+
+        // Find the index of the item with the given ID
+        const itemIndex = cart.findIndex(item => item.id === productId);
+        let x = setInterval(loadingRemove, 10);
+        setTimeout(() => {
+            clearTimeout(x);
+            count = 0;
+            document.querySelector('#loaders').style.display = "none";
+        }, 1000);
+
+        setTimeout(() => {
+            if (itemIndex !== -1) {
+                // Remove the item from the cart array
+                cart.splice(itemIndex, 1);
+            }
+            // Update the cart in localStorage
+            localStorage.setItem('cart-display', JSON.stringify(cart));
+            document.getElementById("cart-count").innerHTML = cart.length;
+            // Update the displayed cart
+            displayCart();
+        }, 1500);
+
+    }
+
+    // Function to display the cart contents
     function displayCart() {
         const cartContainer = document.getElementById('cart-display');
         cartContainer.innerHTML = '';
 
         const cart = JSON.parse(localStorage.getItem('cart-display')) || [];
-
         cart.forEach(item => {
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
-
             cartItem.style.backgroundImage = `url(${item.image})`;
-
             const cartInfo = document.createElement('div');
             cartInfo.classList.add('cart-info');
             cartInfo.innerHTML = `${item.name} <br> Quantity: ${item.quantity}`;
@@ -166,81 +202,18 @@ function addToCart() {
             cartItem.appendChild(deleteButton);
             cartContainer.appendChild(cartItem);
         });
-        //If cart is empty
-        if (cart.hasChildNodes()) {
-            cart.innerHTML = "<h1>No Items</h1>";
-        } else {
-            displayCart();
-        }
-        //+++++++++
-        // loading removing
-        function loadingRemove() {
-            count++;
-            document.querySelector('#loaders').style.display = "flex";
-            document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
-            return count;
-        }
-        // Function to handle deleting items from the cart
-        function deleteCartItem(productId) {
-            let cart = JSON.parse(localStorage.getItem('cart-display')) || [];
-
-            // Find the index of the item with the given ID
-            const itemIndex = cart.findIndex(item => item.id === productId);
-            let x = setInterval(loadingRemove, 10);
-            setTimeout(() => {
-                clearTimeout(x);
-                count = 0;
-                document.querySelector('#loaders').style.display = "none";
-            }, 1000);
-
-            setTimeout(() => {
-                if (itemIndex !== -1) {
-                    // Remove the item from the cart array
-                    cart.splice(itemIndex, 1);
-                }
-                // Update the cart in localStorage
-                localStorage.setItem('cart-display', JSON.stringify(cart));
-
-                // Update the displayed cart
-                displayCart();
-            }, 1500);
-
-        }
-
-        // Function to display the cart contents
-        function displayCart() {
-            const cartContainer = document.getElementById('cart-display');
-            cartContainer.innerHTML = '';
-
-            const cart = JSON.parse(localStorage.getItem('cart-display')) || [];
-
-            cart.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.style.backgroundImage = `url(${item.image})`;
-                const cartInfo = document.createElement('div');
-                cartInfo.classList.add('cart-info');
-                cartInfo.innerHTML = `${item.name} <br> Quantity: ${item.quantity}`;
-
-                const deleteButton = document.createElement('button');
-                deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Remove';
-                deleteButton.addEventListener('click', () => deleteCartItem(item.id));
-
-                cartItem.appendChild(cartInfo);
-                cartItem.appendChild(deleteButton);
-                cartContainer.appendChild(cartItem);
-            });
-        }
-
-        // Display the initial cart contents when the page loads
-        displayCart();
-
+        return cart.length;
     }
-    // return (
-    //     products
-    // )
+
+    // Display the initial cart contents when the page loads
+    document.getElementById("cart-count").innerHTML = displayCart();
 
 }
+// return (
+//     products
+// )
 
+
+// 
 
 export { addToCart };
