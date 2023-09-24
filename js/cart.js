@@ -87,6 +87,7 @@ function addToCart() {
             document.getElementById("cart-close").style.display = "none"
             document.getElementById("cart-container").style.display = "none"
             document.getElementById("content").style.display = "block"
+            document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`;
         }
     )
     let count = 0;
@@ -172,24 +173,38 @@ function addToCart() {
             displayCart();
         }
         //+++++++++
+        // loading removing
+        function loadingRemove() {
+            count++;
+            document.querySelector('#loaders').style.display = "flex";
+            document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+            return count;
+        }
         // Function to handle deleting items from the cart
         function deleteCartItem(productId) {
             let cart = JSON.parse(localStorage.getItem('cart-display')) || [];
 
             // Find the index of the item with the given ID
             const itemIndex = cart.findIndex(item => item.id === productId);
+            let x = setInterval(loadingRemove, 10);
+            setTimeout(() => {
+                clearTimeout(x);
+                count = 0;
+                document.querySelector('#loaders').style.display = "none";
+            }, 1000);
 
-            if (itemIndex !== -1) {
-                // Remove the item from the cart array
-                cart.splice(itemIndex, 1);
+            setTimeout(() => {
+                if (itemIndex !== -1) {
+                    // Remove the item from the cart array
+                    cart.splice(itemIndex, 1);
+                }
+                // Update the cart in localStorage
+                localStorage.setItem('cart-display', JSON.stringify(cart));
 
-            }
+                // Update the displayed cart
+                displayCart();
+            }, 1500);
 
-            // Update the cart in localStorage
-            localStorage.setItem('cart-display', JSON.stringify(cart));
-
-            // Update the displayed cart
-            displayCart();
         }
 
         // Function to display the cart contents
