@@ -1,4 +1,6 @@
-const nav = document.querySelector("#mySidenav")
+const nav = document.querySelector("#mySidenav");
+const navA = document.querySelectorAll(".sidenav a");
+
 nav.style.transition = "1s";
 nav.style.left = "-100%";
 nav.style.display = "flex";
@@ -11,7 +13,21 @@ document.querySelector(".fa-bars").addEventListener('click', () => {
     nav.style.left = "0%";
     nav.style.transition = "1s";
     setTimeout(() => {
-        nav.style.backgroundSize = "1000%";
+        nav.style.backgroundSize = "350%";
         nav.style.transition = "5s";
-    }, 2000);
+        navA.forEach((navA) => {
+            navA.style.color = "white";
+            navA.style.transition = "2s";
+        })
+
+        setTimeout(() => {
+            nav.style.top = "200px"
+            navA.forEach((navA) => {
+                navA.style.color = "black";
+                navA.style.transition = "2s";
+                nav.style.backgroundSize = "100%";
+                nav.style.backgroundPosition = "-500px";
+            })
+        }, 3000);
+    }, 1000);
 });
