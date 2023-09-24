@@ -3,7 +3,7 @@ import * as productImages from "./content.js";
 function addToCart() {
     const products = {
         a1: {
-            name: "",
+            name: `Long sleeve<h4>Gold Shirt</h4>`,
             image: "Uniform/CategoryA/a1.jpg"
         },
         a2: {
@@ -89,16 +89,20 @@ function addToCart() {
             document.getElementById("content").style.display = "block"
         }
     )
+    let count = 0;
 
     function loading() {
+        count++;
         document.querySelector('#loaders').style.display = "flex";
+        document.querySelector('.count-up').innerHTML = `${count}`;
     }
     // Function to handle adding items to the cart
     function addItem(event) {
         //Loaders
-        let x = setInterval(loading, 100);
+        let x = setInterval(loading, 10);
         setTimeout(() => {
             clearTimeout(x);
+            count = 0;
             document.querySelector('#loaders').style.display = "none";
         }, 1000);
         //----------

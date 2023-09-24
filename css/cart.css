@@ -55,7 +55,8 @@
     background: black;
     padding: 2px;
     font-size: 18px;
-    margin-top: 200px;
+    margin-top: 150px;
+    position: absolute;
 }
 
 @media screen and (max-width:600px) {

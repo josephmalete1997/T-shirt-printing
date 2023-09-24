@@ -12,17 +12,21 @@
     z-index: 100;
 }
 
-#loaders .fa-solid {
+#loaders .count {
     text-align: center;
     margin: auto;
     position: absolute;
     z-index: 105;
-    background: white;
+    background: black;
     border-radius: 50%;
-    font-size: 110px;
+    font-size: 80px;
     padding: 30px;
-    width: 120px;
-    height: 120px;
+    width: 135px;
+    height: 135px;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loader {
