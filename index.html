@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/loaders.css">
 </head>
 
 <body bgcolor="white">
@@ -19,7 +21,7 @@
             <img src="logo1.png" class="logo" width="20%">
             <!-------------------------------------->
             <div class="icons">
-                <i class='fa fa-cart-shopping'>
+                <i class='fa fa-cart-shopping' id="cart-open">
                     <div class="tool-tip">
                         <div class="container-tip"></div>
                         <div class="container">Basket</div>
@@ -55,7 +57,16 @@
         </div>
     </div>
     <div class="theme"></div>
-    <div class="cart-display"></div>
+
+    <div id="cart-container">
+        <h1>Enquiry basket
+            <hr>
+        </h1>
+        <i class="fa fa-x" id="cart-close"></i>
+        <div id="cart-display">
+
+        </div>
+    </div>
     <select class="sort">
         <option>Sort by length</option>
         <option>Sort by names[A-Z]</option>
@@ -70,8 +81,11 @@
     <!-- Scripts -->
     <script type="module" src="js/content.js">
     </script>
+    <script type="module" src="js/cart.js">
+    </script>
 </body>
 
 </html>
+
 
 </html>

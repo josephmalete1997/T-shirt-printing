@@ -7,4 +7,6 @@ export { uniform_A, uniform_B }
 items.getItems(uniform_A);
 items.getItems(uniform_B);
 
+
+
 console.log(cartItems.addToCart(uniform_A, uniform_B));
