@@ -3,51 +3,67 @@ import * as productImages from "./content.js";
 function addToCart() {
     const products = {
         a1: {
+            name: "",
             image: "Uniform/CategoryA/a1.jpg"
         },
         a2: {
+            name: "",
             image: "Uniform/CategoryA/a2.jpg"
         },
         a3: {
+            name: "",
             image: "Uniform/CategoryA/a3.jpg"
         },
         a4: {
+            name: "",
             image: "Uniform/CategoryA/a4.jpg"
         },
         a5: {
+            name: "",
             image: "Uniform/CategoryA/a5.jpg"
         },
         a6: {
+            name: "",
             image: "Uniform/CategoryA/a6.jpg"
         },
         a7: {
+            name: "",
             image: "Uniform/CategoryA/a7.jpg"
         },
         a8: {
+            name: "",
             image: "Uniform/CategoryA/a8.jpg"
         },
         b1: {
+            name: "",
             image: "Uniform/CategoryB/b1.jpg"
         },
         b2: {
+            name: "",
             image: "Uniform/CategoryB/b2.jpg"
         },
         b3: {
+            name: "",
             image: "Uniform/CategoryB/b3.jpg"
         },
         b4: {
+            name: "",
             image: "Uniform/CategoryB/b4.jpg"
         },
         b5: {
+            name: "",
             image: "Uniform/CategoryB/b5.jpg"
         },
         b6: {
+            name: "",
             image: "Uniform/CategoryB/b6.webp"
         },
         b7: {
+            name: "",
             image: "Uniform/CategoryB/b7.jpg"
         },
         b8: {
+            name: "",
             image: "Uniform/CategoryB/b8.jpg"
         }
     };
@@ -57,6 +73,7 @@ function addToCart() {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', addItem)
     });
+
     document.getElementById("cart-open").addEventListener('click',
         () => {
             document.getElementById("cart-container").style.display = "block"
@@ -73,8 +90,18 @@ function addToCart() {
         }
     )
 
+    function loading() {
+        document.querySelector('#loaders').style.display = "flex";
+    }
     // Function to handle adding items to the cart
     function addItem(event) {
+        //Loaders
+        let x = setInterval(loading, 100);
+        setTimeout(() => {
+            clearTimeout(x);
+            document.querySelector('#loaders').style.display = "none";
+        }, 1000);
+        //----------
         const product = event.target.parentElement;
         const productId = product.getAttribute('data-id');
         const productName = products[productId].name;
@@ -82,6 +109,7 @@ function addToCart() {
         const cartItem = {
                 id: productId,
                 name: productName,
+                ame: productName,
                 image: productImage,
             }
             // Check if cart already exists in localStorage
@@ -95,6 +123,7 @@ function addToCart() {
             cart[existingCartItemIndex].quantity += 1;
         } else {
             // Otherwise, add it to the cart
+
             cartItem.quantity = 1;
             cart.push(cartItem);
         }
@@ -118,20 +147,16 @@ function addToCart() {
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
 
-            const cartImage = document.createElement('img');
-            cartImage.src = item.image;
-            cartImage.alt = item.name;
-            cartImage.style.width = '100%';
+            cartItem.style.backgroundImage = `url(${item.image})`;
 
             const cartInfo = document.createElement('div');
             cartInfo.classList.add('cart-info');
-            cartInfo.textContent = `${item.name} x Quantity: ${item.quantity}`;
+            cartInfo.innerHTML = `${item.name} <br> Quantity: ${item.quantity}`;
 
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
+            deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Remove';
             deleteButton.addEventListener('click', () => deleteCartItem(item.id));
 
-            cartItem.appendChild(cartImage);
             cartItem.appendChild(cartInfo);
             cartItem.appendChild(deleteButton);
             cartContainer.appendChild(cartItem);
@@ -153,6 +178,7 @@ function addToCart() {
             if (itemIndex !== -1) {
                 // Remove the item from the cart array
                 cart.splice(itemIndex, 1);
+
             }
 
             // Update the cart in localStorage
@@ -172,27 +198,20 @@ function addToCart() {
             cart.forEach(item => {
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item');
-
-                const cartImage = document.createElement('img');
-                cartImage.src = item.image;
-                cartImage.alt = item.name;
-                cartImage.style.width = '20%';
-
+                cartItem.style.backgroundImage = `url(${item.image})`;
                 const cartInfo = document.createElement('div');
                 cartInfo.classList.add('cart-info');
-                cartInfo.textContent = `${item.name} x ${item.quantity}`;
+                cartInfo.innerHTML = `${item.name} <br> Quantity: ${item.quantity}`;
 
                 const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Delete';
+                deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Remove';
                 deleteButton.addEventListener('click', () => deleteCartItem(item.id));
 
-                cartItem.appendChild(cartImage);
                 cartItem.appendChild(cartInfo);
                 cartItem.appendChild(deleteButton);
                 cartContainer.appendChild(cartItem);
             });
         }
-
 
         // Display the initial cart contents when the page loads
         displayCart();
