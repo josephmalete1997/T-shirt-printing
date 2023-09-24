@@ -22,7 +22,7 @@ function getItems(UniformItems) {
             borderHolder.setAttribute("data-id", `${productID}${index+1}`);
             const container = document.getElementById("category");
             borderHolder.innerHTML = `<i class='fa-regular fa-heart'></i> 
-            <button class="add-to-cart add"><i class="fa-solid fa-cart-plus"></i>  to Basket</button>
+            <button class="add-to-cart add"><i class="fa-solid fa-cart-plus"></i>  Add item</button>
             `;
             borderHolder.style.backgroundImage = `url(${UniformItems})`;
             // text
