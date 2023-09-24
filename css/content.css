@@ -31,8 +31,8 @@
 .borderHolder .fa-heart {
     color: orange;
     font-size: 20px;
-    margin-top: -250px;
-    margin-left: -50px;
+    margin-top: -280px;
+    margin-left: -180px;
 }
 
 .borderHolder .fa-heart:hover {
@@ -102,5 +102,9 @@
         margin: 5% 0% 5% 50%;
         border: none;
         font-size: 18px;
+    }
+    .borderHolder .fa-heart {
+        margin-top: -280px;
+        margin-left: -140px;
     }
 }

@@ -129,6 +129,18 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
+
+/* Arrows */
+
+.fa-chevron-right {
+    float: right;
+    opacity: 0.8;
+    color: #ccc;
+}
+
+
+/* ooo */
+
 @media screen and (max-width:600px) {
     .logo {
         width: 40%;
