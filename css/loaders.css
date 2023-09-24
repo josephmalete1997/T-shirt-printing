@@ -1,5 +1,5 @@
 #loaders {
-    background: black;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     margin: auto;
     position: absolute;
     z-index: 105;
-    background: black;
+    /* background: black; */
     border-radius: 50%;
     font-size: 80px;
     padding: 30px;
