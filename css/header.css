@@ -182,15 +182,22 @@ body {
     #header #mySidenav a {
         width: 90%;
         border-bottom: .5px solid #ccc;
-        text-align: left;
         text-justify: auto;
         color: orange;
         margin: 10px;
+        text-align: right;
     }
     #header #mySidenav {
         display: none;
         flex-direction: column;
         margin-top: 50px;
+        background: white;
+        background-image: url(bg.jpg);
+        position: fixed;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: 0px;
+        background-position-y: -50px;
     }
     .link-under {
         display: none;
