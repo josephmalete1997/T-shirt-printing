@@ -6,13 +6,24 @@ body {
 #header {
     border-bottom: 1px solid #ccc;
     display: flex;
+    flex-direction: row;
     background: rgb(255, 251, 245);
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #header #mySidenav {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    margin-top: 0px;
 }
 
 
@@ -24,9 +35,10 @@ body {
 }
 
 .icons {
-    float: right;
     font-size: 30px;
-    margin: 10px 100px;
+    width: 20%;
+    margin-left: 65%;
+    position: absolute;
 }
 
 .icons .fa,
@@ -117,7 +129,14 @@ body {
 /* logo */
 
 .logo {
-    margin-left: 20px;
+    background-image: url(logo1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 280px;
+    height: 100px;
+    position: absolute;
+    left: 20px;
+    margin-top: -30px;
 }
 
 .theme {
@@ -135,6 +154,7 @@ body {
 .fa-chevron-right {
     float: right;
     opacity: 0.8;
+    display: none;
     color: #ccc;
 }
 
@@ -143,13 +163,20 @@ body {
 
 @media screen and (max-width:600px) {
     .logo {
-        width: 40%;
-        margin-left: 10%;
+        background-image: url(logo1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 220px;
+        height: 70px;
+        position: absolute;
+        left: 60px;
+        margin-top: -60px;
     }
     .icons {
         width: 40%;
         font-size: 30px;
-        margin: -50px 5% 0% 55%;
+        margin-top: -60px;
+        margin-left: 56%;
         position: absolute;
     }
     #header #mySidenav a {
@@ -161,7 +188,7 @@ body {
         margin: 10px;
     }
     #header #mySidenav {
-        display: flex;
+        display: none;
         flex-direction: column;
         margin-top: 50px;
     }
@@ -171,6 +198,15 @@ body {
     .fa-bars {
         display: block;
         position: absolute;
-        margin: 20px 5% 0% 2%;
+        left: 5px;
+        top: 90px;
+        background: black;
+        color: white;
+        padding: 5px;
+    }
+    .fa-chevron-right {
+        float: right;
+        opacity: 0.8;
+        color: #ccc;
     }
 }
