@@ -9,7 +9,7 @@
 /* Uniform container */
 
 .borderHolder {
-    border: 0.1px solid #ccc;
+    /* border: 0.1px solid #ccc; */
     width: 18.5%;
     height: 350px;
     background: white;
@@ -88,8 +88,8 @@
 /* Category titles */
 
 .category-title {
-    padding-left: 50px;
-    font-size: 60px;
+    padding-left: 20px;
+    font-size: 46px;
 }
 
 @media screen and (max-width:600px) {
