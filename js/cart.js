@@ -66,6 +66,74 @@ function addToCart() {
         b8: {
             name: "",
             image: "Uniform/CategoryB/b8.jpg"
+        },
+        c1: {
+            name: "",
+            image: "Uniform/CategoryC/c1.jpg"
+        },
+        c2: {
+            name: "",
+            image: "Uniform/CategoryC/c2.jpg"
+        },
+        c3: {
+            name: "",
+            image: "Uniform/CategoryC/c3.jpg"
+        },
+        c4: {
+            name: "",
+            image: "Uniform/CategoryC/c4.jpg"
+        },
+        c5: {
+            name: "",
+            image: "Uniform/CategoryC/c5.jpg"
+        },
+        c6: {
+            name: "",
+            image: "Uniform/CategoryC/c6.jpg"
+        },
+        c7: {
+            name: "",
+            image: "Uniform/CategoryC/c7.jpg"
+        },
+        c8: {
+            name: "",
+            image: "Uniform/CategoryC/c8.jpg"
+        },
+        c9: {
+            name: "",
+            image: "Uniform/CategoryC/c9.jpg"
+        },
+        d1: {
+            name: "",
+            image: "Uniform/CategoryD/d1.jpg"
+        },
+        d2: {
+            name: "",
+            image: "Uniform/CategoryD/d2.jpg"
+        },
+        d3: {
+            name: "",
+            image: "Uniform/CategoryD/d3.jpg"
+        },
+        d4: {
+            name: "",
+            image: "Uniform/CategoryD/d4.jpg"
+        },
+        d5: {
+            name: "",
+            image: "Uniform/CategoryD/d5.jpg"
+        },
+        d6: {
+            name: "",
+            image: "Uniform/CategoryD/d6.jpg"
+        },
+        d7: {
+            name: "",
+            image: "Uniform/CategoryD/d7.jpg"
+        },
+        d8: {
+            name: "",
+            image: "Uniform/CategoryD/d8.jpg"
         }
     };
 
@@ -103,9 +171,15 @@ function addToCart() {
         //Loaders
         let x = setInterval(loading, 10);
         setTimeout(() => {
-            clearTimeout(x);
-            count = 0;
-            document.querySelector('#loaders').style.display = "none";
+            setTimeout(() => {
+                document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`
+                clearInterval(x);
+                count = 0;
+                document.querySelector('#loaders').style.display = "none";
+            }, 800);
+
+            document.querySelector('.count').innerHTML = `<i class = "fa-solid fa-check"></i>`;
+
         }, 1000);
         //----------
         const product = event.target.parentElement;
@@ -161,10 +235,14 @@ function addToCart() {
         const itemIndex = cart.findIndex(item => item.id === productId);
         let x = setInterval(loadingRemove, 10);
         setTimeout(() => {
-            clearTimeout(x);
-            count = 0;
-            document.querySelector('#loaders').style.display = "none";
-        }, 1000);
+            clearInterval(x);
+            document.querySelector('.count').innerHTML = `<i class = "fa-solid fa-check"></i>`;
+            setTimeout(() => {
+                count = 0;
+                document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+                document.querySelector('#loaders').style.display = "none";
+            }, 800);
+        }, 700);
 
         setTimeout(() => {
             if (itemIndex !== -1) {

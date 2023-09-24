@@ -8,6 +8,13 @@ function getItems(UniformItems) {
     if (UniformItems === itemLIst.uniform_B) {
         productID = "b";
     }
+
+    if (UniformItems === itemLIst.uniform_C) {
+        productID = "c";
+    }
+    if (UniformItems === itemLIst.uniform_D) {
+        productID = "d";
+    }
     return (
         UniformItems.forEach((UniformItems, index) => {
             const borderHolder = document.createElement('div');

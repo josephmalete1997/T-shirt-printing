@@ -12,14 +12,16 @@
     border: 0.1px solid #ccc;
     width: 18.5%;
     height: 350px;
+    background: white;
     background-size: 90%;
     background-position: center;
     background-repeat: no-repeat;
     margin: 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 20;
 }
 
 .borderHolder:hover {
@@ -79,6 +81,16 @@
     background: black;
     color: orange;
     transition: 1s;
+}
+
+
+/* Category titles */
+
+.category-title {
+    padding-left: 50px;
+    font-size: 60px;
+    position: absolute;
+    height: 550px;
 }
 
 @media screen and (max-width:600px) {
