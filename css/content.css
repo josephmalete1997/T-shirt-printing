@@ -97,7 +97,7 @@
         width: 45%;
     }
     .borderHolder .add {
-        width: 200px;
+        width: 100px;
         border-radius: 10px;
     }
     .sort {
@@ -108,6 +108,6 @@
     }
     .borderHolder .fa-heart {
         margin-top: -280px;
-        margin-left: -140px;
+        margin-left: -100px;
     }
 }
