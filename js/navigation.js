@@ -32,3 +32,26 @@ document.querySelector(".fa-bars").addEventListener('click', () => {
         }, 3000);
     }, 1000);
 });
+
+//Scroll
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() { myFunction() };
+
+// Get the header
+let header = document.getElementById("nav");
+let logo = document.querySelector('.logo')
+
+// Get the offset position of the navbar
+let sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        logo.classList.add("makeWhite");
+    } else {
+        header.classList.remove("sticky");
+        logo.classList.remove("makeWhite");
+
+    }
+}
