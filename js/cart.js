@@ -1,6 +1,5 @@
 import * as productImages from "./content.js";
 
-
 function addToCart() {
     const products = {
         a1: {
@@ -8,7 +7,7 @@ function addToCart() {
             image: "Uniform/CategoryA/a1.jpg"
         },
         a2: {
-            name: "",
+            name: `Long sleeve<h4>Gold Shirt</h4>`,
             image: "Uniform/CategoryA/a2.jpg"
         },
         a3: {
@@ -134,6 +133,178 @@ function addToCart() {
         d8: {
             name: "",
             image: "Uniform/CategoryD/d8.jpg"
+        },
+        e1: {
+            name: "",
+            image: "Uniform/CategoryE/e1.jpg"
+        },
+        e2: {
+            name: "",
+            image: "Uniform/CategoryE/e2.jpg"
+        },
+        e3: {
+            name: "",
+            image: "Uniform/CategoryE/e3.jpg"
+        },
+        e4: {
+            name: "",
+            image: "Uniform/CategoryE/e4.jpg"
+        },
+        e5: {
+            name: "",
+            image: "Uniform/CategoryE/e5.jpg"
+        },
+        e6: {
+            name: "",
+            image: "Uniform/CategoryE/e6.webp"
+        },
+        e7: {
+            name: "",
+            image: "Uniform/CategoryE/e7.jpg"
+        },
+        e8: {
+            name: "",
+            image: "Uniform/CategoryE/e8.jpg"
+        },
+        f1: {
+            name: "",
+            image: "Uniform/CategoryF/f1.jpg"
+        },
+        f2: {
+            name: "",
+            image: "Uniform/CategoryF/f2.jpg"
+        },
+        f3: {
+            name: "",
+            image: "Uniform/CategoryF/f3.jpg"
+        },
+        f4: {
+            name: "",
+            image: "Uniform/CategoryF/f4.jpg"
+        },
+        f5: {
+            name: "",
+            image: "Uniform/CategoryF/f5.jpg"
+        },
+        f6: {
+            name: "",
+            image: "Uniform/CategoryF/f6.webp"
+        },
+        f7: {
+            name: "",
+            image: "Uniform/CategoryF/f7.jpg"
+        },
+        f8: {
+            name: "",
+            image: "Uniform/CategoryF/f8.jpg"
+        },
+        g1: {
+            name: "",
+            image: "Uniform/CategoryG/g1.jpg"
+        },
+        g2: {
+            name: "",
+            image: "Uniform/CategoryG/g2.jpg"
+        },
+        g3: {
+            name: "",
+            image: "Uniform/CategoryG/g3.jpg"
+        },
+        g4: {
+            name: "",
+            image: "Uniform/CategoryG/g4.jpg"
+        },
+        g5: {
+            name: "",
+            image: "Uniform/CategoryG/g5.jpg"
+        },
+        g6: {
+            name: "",
+            image: "Uniform/CategoryG/g6.jpg"
+        },
+        g7: {
+            name: "",
+            image: "Uniform/CategoryG/g7.jpg"
+        },
+        g8: {
+            name: "",
+            image: "Uniform/CategoryG/g8.jpg"
+        },
+        g9: {
+            name: "",
+            image: "Uniform/CategoryG/g9.jpg"
+        },
+        h1: {
+            name: "",
+            image: "Uniform/CategoryH/h1.jpg"
+        },
+        h2: {
+            name: "",
+            image: "Uniform/CategoryH/h2.jpg"
+        },
+        h3: {
+            name: "",
+            image: "Uniform/CategoryH/h3.jpg"
+        },
+        h4: {
+            name: "",
+            image: "Uniform/CategoryH/h4.jpg"
+        },
+        h5: {
+            name: "",
+            image: "Uniform/CategoryH/h5.jpg"
+        },
+        h6: {
+            name: "",
+            image: "Uniform/CategoryH/h6.jpg"
+        },
+        h7: {
+            name: "",
+            image: "Uniform/CategoryH/h7.jpg"
+        },
+        h8: {
+            name: "",
+            image: "Uniform/CategoryH/h8.jpg"
+        },
+        h9: {
+            name: "",
+            image: "Uniform/CategoryH/h9.jpg"
+        },
+        h10: {
+            name: "",
+            image: "Uniform/CategoryH/h10.jpg"
+        },
+        i1: {
+            name: "",
+            image: "Uniform/CategoryI/i1.jpg"
+        },
+        i2: {
+            name: "",
+            image: "Uniform/CategoryI/i2.jpg"
+        },
+        i3: {
+            name: "",
+            image: "Uniform/CategoryI/i3.jpg"
+        },
+        i4: {
+            name: "",
+            image: "Uniform/CategoryI/i4.jpg"
+        },
+        i5: {
+            name: "",
+            image: "Uniform/CategoryI/i5.jpg"
+        },
+        i6: {
+            name: "",
+            image: "Uniform/CategoryI/i6.jpg"
+        },
+        i7: {
+            name: "",
+            image: "Uniform/CategoryI/i7.jpg"
+        },
+        i8: {
+            name: "",
+            image: "Uniform/CategoryI/i8.jpg"
         }
     };
 
@@ -145,17 +316,17 @@ function addToCart() {
 
     document.getElementById("cart-open").addEventListener('click',
         () => {
-            document.getElementById("cart-container").style.display = "block"
-            document.getElementById("cart-close").style.display = "block"
-            document.getElementById("content").style.display = "none"
+            document.getElementById("cart-container").style.left = "0%";
+            document.getElementById("cart-close").style.display = "block";
+            document.getElementById("content").style.display = "none";
             displayCart();
         }
     );
     document.getElementById("cart-close").addEventListener('click',
         () => {
-            document.getElementById("cart-close").style.display = "none"
-            document.getElementById("cart-container").style.display = "none"
-            document.getElementById("content").style.display = "block"
+            document.getElementById("cart-close").style.display = "none";
+            document.getElementById("cart-container").style.left = "100%";
+            document.getElementById("content").style.display = "block";
             document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`;
         }
     )
@@ -182,17 +353,19 @@ function addToCart() {
 
         }, 1000);
         //----------
+
         const product = event.target.parentElement;
         const productId = product.getAttribute('data-id');
         const productName = products[productId].name;
         const productImage = products[productId].image;
         const cartItem = {
-                id: productId,
-                name: productName,
-                ame: productName,
-                image: productImage,
-            }
-            // Check if cart already exists in localStorage
+            id: productId,
+            name: productName,
+            ame: productName,
+            image: productImage,
+        }
+
+        // Check if cart already exists in localStorage
         let cart = JSON.parse(localStorage.getItem('cart-display')) || [];
 
         // Check if the item is already in the cart
@@ -285,7 +458,6 @@ function addToCart() {
 
     // Display the initial cart contents when the page loads
     document.getElementById("cart-count").innerHTML = displayCart();
-
 }
 // return (
 //     products
