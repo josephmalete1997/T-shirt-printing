@@ -318,7 +318,7 @@ function addToCart() {
         () => {
             document.getElementById("cart-container").style.left = "0%";
             document.getElementById("cart-close").style.display = "block";
-            document.getElementById("content").style.display = "none";
+            // document.getElementById("content").style.display = "none";
             displayCart();
         }
     );
@@ -326,7 +326,7 @@ function addToCart() {
         () => {
             document.getElementById("cart-close").style.display = "none";
             document.getElementById("cart-container").style.left = "100%";
-            document.getElementById("content").style.display = "block";
+            // document.getElementById("content").style.display = "block";
             document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`;
         }
     )
