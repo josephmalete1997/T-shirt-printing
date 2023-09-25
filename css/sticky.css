@@ -37,6 +37,24 @@
     left: 0px;
 }
 
+@media screen and (max-width:600px) {
+    .newIcons {
+        top: 100px;
+    }
+    .newIcons .fa:hover,
+    .newIcons .fa-regular:hover {
+        color: black;
+    }
+    .cartNumber {
+        background: white;
+        color: orange;
+        border: 2px solid orange;
+    }
+    .makeWhite {
+        background-position-y: 25px;
+    }
+}
+
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 

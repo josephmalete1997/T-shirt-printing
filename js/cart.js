@@ -3,11 +3,11 @@ import * as productImages from "./content.js";
 function addToCart() {
     const products = {
         a1: {
-            name: `Long sleeve<h4>Gold Shirt</h4>`,
+            name: `<h3>Long sleeve</h3><h4>Gold Shirt</h4>`,
             image: "Uniform/CategoryA/a1.jpg"
         },
         a2: {
-            name: `Long sleeve<h4>Gold Shirt</h4>`,
+            name: `<h3>Long sleeve</h3><h4>Gold Shirt</h4>`,
             image: "Uniform/CategoryA/a2.jpg"
         },
         a3: {
@@ -361,8 +361,7 @@ function addToCart() {
         const cartItem = {
             id: productId,
             name: productName,
-            ame: productName,
-            image: productImage,
+            image: productImage
         }
 
         // Check if cart already exists in localStorage
@@ -443,7 +442,7 @@ function addToCart() {
             cartItem.style.backgroundImage = `url(${item.image})`;
             const cartInfo = document.createElement('div');
             cartInfo.classList.add('cart-info');
-            cartInfo.innerHTML = `${item.name} <br> Quantity: ${item.quantity}`;
+            cartInfo.innerHTML = `<div class="item-name">${item.name}</div> <br> Quantity: ${item.quantity}`;
 
             const deleteButton = document.createElement('button');
             deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Remove';

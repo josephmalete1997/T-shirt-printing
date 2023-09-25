@@ -39,7 +39,9 @@ window.onscroll = function() { myFunction() };
 
 // Get the header
 let header = document.getElementById("nav");
-let logo = document.querySelector('.logo')
+let logo = document.querySelector('.logo');
+let icons = document.querySelector('.icons');
+let cartCounter = document.querySelector('.fa #cart-count');
 
 // Get the offset position of the navbar
 let sticky = header.offsetTop;
@@ -49,9 +51,12 @@ function myFunction() {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         logo.classList.add("makeWhite");
+        icons.classList.add("newIcons");
+        cartCounter.classList.add("cartNumber");
     } else {
         header.classList.remove("sticky");
         logo.classList.remove("makeWhite");
-
+        icons.classList.remove("newIcons");
+        cartCounter.classList.remove("cartNumber");
     }
 }
