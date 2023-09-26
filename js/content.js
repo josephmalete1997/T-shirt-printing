@@ -1,5 +1,6 @@
 import * as items from "./items.js";
 import * as cartItems from "./cart.js";
+
 // images
 const uniform_A = ["Uniform/CategoryA/a1.jpg", "Uniform/CategoryA/a2.jpg", "Uniform/CategoryA/a3.jpg", "Uniform/CategoryA/a4.jpg", "Uniform/CategoryA/a5.jpg", "Uniform/CategoryA/a6.jpg", "Uniform/CategoryA/a7.jpg", "Uniform/CategoryA/a8.jpg"];
 const uniform_B = ["Uniform/CategoryB/b1.jpg", "Uniform/CategoryB/b2.jpg", "Uniform/CategoryB/b3.jpg", "Uniform/CategoryB/b4.jpg", "Uniform/CategoryB/b5.jpg", "Uniform/CategoryB/b6.webp", "Uniform/CategoryB/b7.jpg", "Uniform/CategoryB/b8.jpg"];
@@ -12,7 +13,7 @@ const uniform_H = ["Uniform/CategoryH/h1.jpg", "Uniform/CategoryH/h2.jpg", "Unif
 const uniform_I = ["Uniform/CategoryI/i1.jpg", "Uniform/CategoryI/i2.jpg", "Uniform/CategoryI/i3.jpg", "Uniform/CategoryI/i4.jpg", "Uniform/CategoryI/i5.jpg", "Uniform/CategoryI/i6.jpg", "Uniform/CategoryI/i7.jpg", "Uniform/CategoryI/i8.jpg"];
 export { uniform_A, uniform_B, uniform_C, uniform_D, uniform_E, uniform_F, uniform_G, uniform_H, uniform_I };
 // text
-const itemTextA = [`<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`]
+const itemTextA = [`<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`, `<h3>Long sleeve</h3><p>Gold Shirt</p>`];
 const itemTextB = [];
 const itemTextC = [];
 const itemTextD = [];

@@ -33,7 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //change head-title
 
-
+        // Hide header
+        document.getElementById("nav").style.display = "none";
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
 
 
         //Start loading
