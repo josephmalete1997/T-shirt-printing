@@ -10,28 +10,20 @@ document.querySelector(".fa-bars").addEventListener('click', () => {
     nav.style.left = "0%";
     nav.style.display = "flex";
     nav.style.transition = "1s";
+
     setTimeout(() => {
-        nav.style.backgroundSize = "350%";
-        nav.style.transition = "5s";
+        // nav.style.top = "200px"
         navA.forEach((navA) => {
-            navA.style.color = "white";
+            navA.style.color = "black";
             navA.style.transition = "2s";
+
         })
+        nav.style.backgroundSize = "100%";
+        nav.style.backgroundPositionX = "-500px";
+        nav.style.transition = "2s";
+    }, 3000);
+}, 1000);
 
-        setTimeout(() => {
-            // nav.style.top = "200px"
-            navA.forEach((navA) => {
-                navA.style.color = "black";
-                navA.style.transition = "2s";
-
-            })
-            nav.style.backgroundSize = "100%";
-            nav.style.backgroundPosition = "-200px";
-            nav.style.background = "white";
-            nav.style.transition = "2s";
-        }, 3000);
-    }, 1000);
-});
 
 //Scroll
 // When the user scrolls the page, execute myFunction

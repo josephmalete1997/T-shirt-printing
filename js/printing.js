@@ -43,7 +43,7 @@ slides[4].style.backgroundPosition = "center";
 slides[4].style.transition = `0.5s`;
 
 slides[5].style.backgroundImage = "url(Branding/bottles/b1.jpg)";
-slides[5].style.backgroundSize = "90%";
+slides[5].style.backgroundSize = "80%";
 slides[5].style.backgroundRepeat = "no-repeat";
 slides[5].style.backgroundPosition = "center";
 slides[5].style.transition = `0.5s`;
