@@ -139,7 +139,7 @@ leftKey[4].addEventListener('click', () => {
     slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
     slides[4].style.transition = `0.2s`;
     if (countFive < 0) {
-        countFive = images[3].length - 1;
+        countFive = images[4].length - 1;
         slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
         slides[4].style.transition = `0.2s`;
     }
