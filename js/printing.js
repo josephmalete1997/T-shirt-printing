@@ -93,3 +93,53 @@ rightKey[2].addEventListener('click', () => {
         slides[2].style.transition = `0.2s`;
     }
 })
+
+
+
+
+
+
+// Home
+
+let pictures = ["printing/HD1.jpg", "printing/HD2.jpg", "printing/HD3.jpg", "printing/HD4.jpg", "printing/SU1.jpg", "printing/SU1B.jpg", "printing/SU2.jpg", "printing/SU2B.jpg", "printing/SU3.jpg", "printing/SU3B.jpg", "printing/SU4.jpg", "printing/SU4B.jpg", "printing/JS1.jpg", "printing/JS2.jpg", "printing/JS3.jpg", "printing/JS4.jpg"];
+
+let horizontal_items = document.querySelector("#horizontal-scroll");
+
+horizontal_items.style.background = "orange";
+horizontal_items.style.zIndex = "180";
+
+
+
+for (let i = 0; i < pictures.length; i++) {
+    let homeItems = document.createElement("div");
+    homeItems.style.width = "500px";
+    homeItems.style.height = "400px";
+    // homeItems.style.float = "left";
+    homeItems.style.backgroundImage = `url(${pictures[i]})`;
+    homeItems.style.backgroundPosition = "center";
+    homeItems.style.backgroundRepeat = "no-repeat";
+    homeItems.style.margin = "-80px";
+    homeItems.style.backgroundSize = "60%";
+
+    horizontal_items.appendChild(homeItems);
+}
+
+
+//Scrolling
+
+
+// script.js
+
+counter = 0;
+
+function move() {
+    if (counter <= 0) {
+        counter -= 2;
+        document.querySelector('#horizontal-scroll').style.transform = `translateX(${counter}%)`;
+        document.querySelector('#horizontal-scroll').style.transition = "1s";
+        document.querySelector('.test').innerHTML = ` Counter = ${counter}`;
+    } else if (counter == -20) {
+        counter -= 0;
+    }
+}
+setInterval(move, 1000);

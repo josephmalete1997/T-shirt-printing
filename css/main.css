@@ -17,3 +17,10 @@
     border-radius: 10px;
     color: rgb(133, 133, 133);
 }
+
+
+/* Body overflow */
+
+body {
+    overflow-x: hidden;
+}
