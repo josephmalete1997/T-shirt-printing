@@ -27,6 +27,10 @@
     color: white;
 }
 
+.LinkColor {
+    color: white;
+}
+
 .makeWhite {
     background: white;
     background-image: url(logo1.png);
