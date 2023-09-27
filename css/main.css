@@ -3,3 +3,17 @@
 #uniform_panel {
     display: none;
 }
+
+.page-name {
+    margin-left: 50px;
+}
+
+.description {
+    margin-left: 7%;
+    width: 85%;
+    background: white;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: rgb(133, 133, 133);
+}
