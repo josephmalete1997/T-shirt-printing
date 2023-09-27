@@ -8,7 +8,7 @@ const images = [
     ["printing/SU1.jpg", "printing/SU1B.jpg", "printing/SU2.jpg", "printing/SU2B.jpg", "printing/SU3.jpg", "printing/SU3B.jpg", "printing/SU4.jpg", "printing/SU4B.jpg"],
     ["printing/JS1.jpg", "printing/JS2.jpg", "printing/JS3.jpg", "printing/JS4.jpg"],
     ["Branding/mugs/M1.jpg", "Branding/mugs/M2.jpg", "Branding/mugs/M3.jpg", "Branding/mugs/M4.jpg", "Branding/mugs/M5.jpg", "Branding/mugs/M6.jpg"],
-    ["phones/phone/p1.webp", "phones/phone/p2.webp", "phones/phone/p3.webp", "phones/phone/p4.jpg"]
+    ["Branding/phones/p1.webp", "Branding/phones/p2.webp", "Branding/phones/p3.webp", "Branding/phones/p4.jpg"]
 ]
 
 
@@ -36,8 +36,8 @@ slides[3].style.backgroundRepeat = "no-repeat";
 slides[3].style.backgroundPosition = "center";
 slides[3].style.transition = `0.5s`;
 
-slides[4].style.backgroundImage = "url(phones/phone/p1.webp)";
-slides[4].style.backgroundSize = "70%";
+slides[4].style.backgroundImage = "url(Branding/phones/p1.webp)";
+slides[4].style.backgroundSize = "90%";
 slides[4].style.backgroundRepeat = "no-repeat";
 slides[4].style.backgroundPosition = "center";
 slides[4].style.transition = `0.5s`;
