@@ -8,9 +8,9 @@ const images = [
     ["printing/SU1.jpg", "printing/SU1B.jpg", "printing/SU2.jpg", "printing/SU2B.jpg", "printing/SU3.jpg", "printing/SU3B.jpg", "printing/SU4.jpg", "printing/SU4B.jpg"],
     ["printing/JS1.jpg", "printing/JS2.jpg", "printing/JS3.jpg", "printing/JS4.jpg"],
     ["Branding/mugs/M1.jpg", "Branding/mugs/M2.jpg", "Branding/mugs/M3.jpg", "Branding/mugs/M4.jpg", "Branding/mugs/M5.jpg", "Branding/mugs/M6.jpg"],
-    ["Branding/phones/p1.webp", "Branding/phones/p2.webp", "Branding/phones/p3.webp", "Branding/phones/p4.jpg"]
+    ["Branding/phones/p1.webp", "Branding/phones/p2.webp", "Branding/phones/p3.webp", "Branding/phones/p4.jpg"],
+    ["Branding/bottles/b1.jpg", "Branding/bottles/b2.jpg", "Branding/bottles/b3.jpg", "Branding/bottles/b4.webp", "Branding/bottles/b5.webp", "Branding/bottles/b6.jpg", "Branding/bottles/b7.jpg", "Branding/bottles/b8.webp"]
 ]
-
 
 slides[0].style.backgroundImage = "url(printing/HD1.jpg)";
 slides[0].style.backgroundSize = "70%";
@@ -41,6 +41,12 @@ slides[4].style.backgroundSize = "90%";
 slides[4].style.backgroundRepeat = "no-repeat";
 slides[4].style.backgroundPosition = "center";
 slides[4].style.transition = `0.5s`;
+
+slides[5].style.backgroundImage = "url(Branding/bottles/b1.jpg)";
+slides[5].style.backgroundSize = "90%";
+slides[5].style.backgroundRepeat = "no-repeat";
+slides[5].style.backgroundPosition = "center";
+slides[5].style.transition = `0.5s`;
 
 
 countOne = 0;
@@ -155,6 +161,28 @@ rightKey[4].addEventListener('click', () => {
     }
 })
 
+
+countSix = 0;
+leftKey[5].addEventListener('click', () => {
+    countSix--;
+    slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
+    slides[5].style.transition = `0.2s`;
+    if (countSix < 0) {
+        countSix = images[5].length - 1;
+        slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
+        slides[5].style.transition = `0.2s`;
+    }
+});
+rightKey[5].addEventListener('click', () => {
+    countSix++;
+    slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
+    slides[5].style.transition = `0.2s`;
+    if (countSix > images[5].length - 1) {
+        countSix = 0;
+        slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
+        slides[5].style.transition = `0.2s`;
+    }
+})
 
 
 // Home
