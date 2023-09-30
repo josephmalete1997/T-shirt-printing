@@ -26,6 +26,7 @@
     margin-right: 20px;
     text-align: justify;
     transition: 0.5s;
+    transform: rotate(90deg);
 }
 
 .text-paragraph {
@@ -73,7 +74,7 @@
     margin-right: 20px;
     text-align: justify;
     transition: 0.5s;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     color: orange;
 }
 
