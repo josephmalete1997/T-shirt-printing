@@ -4,6 +4,8 @@ let rightKey = document.querySelectorAll(".right");
 
 //sublimation images
 const images = [
+    ["printing/GZ1.jpg", "printing/GZ1.png", "printing/GZ2.jpg", "printing/GZ4.png", "printing/GZ5.jpg", "printing/GZ7.jpg", "printing/GZ8.jpg"],
+    ["printing/SP1.jpg", "printing/SP2.jpg", "printing/SP3.jpg", "printing/SP4.jpg", "printing/SP5.jpg", "printing/SP6.jpg", "printing/SP7.jpg"],
     ["printing/HD1.jpg", "printing/HD2.jpg", "printing/HD3.jpg", "printing/HD4.jpg"],
     ["printing/SU1.jpg", "printing/SU1B.jpg", "printing/SU2.jpg", "printing/SU2B.jpg", "printing/SU3.jpg", "printing/SU3B.jpg", "printing/SU4.jpg", "printing/SU4B.jpg"],
     ["printing/JS1.jpg", "printing/JS2.jpg", "printing/JS3.jpg", "printing/JS4.jpg"],
@@ -12,178 +14,48 @@ const images = [
     ["Branding/bottles/b1.jpg", "Branding/bottles/b2.jpg", "Branding/bottles/b3.jpg", "Branding/bottles/b4.webp", "Branding/bottles/b5.webp", "Branding/bottles/b6.jpg", "Branding/bottles/b7.jpg", "Branding/bottles/b8.webp"]
 ]
 
-slides[0].style.backgroundImage = "url(printing/HD1.jpg)";
-slides[0].style.backgroundSize = "70%";
-slides[0].style.backgroundRepeat = "no-repeat";
-slides[0].style.backgroundPosition = "center";
-slides[0].style.transition = `0.2s`;
 
-slides[1].style.backgroundImage = "url(printing/SU1.jpg)";
-slides[1].style.backgroundSize = "70%";
-slides[1].style.backgroundRepeat = "no-repeat";
-slides[1].style.backgroundPosition = "center";
-slides[1].style.transition = `0.2s`;
-
-slides[2].style.backgroundImage = "url(printing/JS1.jpg)";
-slides[2].style.backgroundSize = "70%";
-slides[2].style.backgroundRepeat = "no-repeat";
-slides[2].style.backgroundPosition = "center";
-slides[2].style.transition = `0.2s`;
-
-slides[3].style.backgroundImage = "url(Branding/mugs/M1.jpg)";
-slides[3].style.backgroundSize = "70%";
-slides[3].style.backgroundRepeat = "no-repeat";
-slides[3].style.backgroundPosition = "center";
-slides[3].style.transition = `0.5s`;
-
-slides[4].style.backgroundImage = "url(Branding/phones/p1.webp)";
-slides[4].style.backgroundSize = "90%";
-slides[4].style.backgroundRepeat = "no-repeat";
-slides[4].style.backgroundPosition = "center";
-slides[4].style.transition = `0.5s`;
-
-slides[5].style.backgroundImage = "url(Branding/bottles/b1.jpg)";
-slides[5].style.backgroundSize = "80%";
-slides[5].style.backgroundRepeat = "no-repeat";
-slides[5].style.backgroundPosition = "center";
-slides[5].style.transition = `0.5s`;
-
-
-countOne = 0;
-leftKey[0].addEventListener('click', () => {
-    countOne--;
-    slides[0].style.backgroundImage = `url(${images[0][countOne]})`;
-    slides[0].style.transition = `0.2s`;
-    if (countOne < 0) {
-        countOne = images[0].length - 1;
-        slides[0].style.backgroundImage = `url(${images[0][countOne]})`;
-        slides[0].style.transition = `0.2s`;
-    }
+slides.forEach((slides, index) => {
+    slides.style.backgroundImage = `url(${images[index][0]})`
+    slides.style.backgroundSize = "70%";
+    slides.style.backgroundRepeat = "no-repeat";
+    slides.style.backgroundPosition = "center";
+    slides.style.transition = `0.5s`;
 });
-rightKey[0].addEventListener('click', () => {
-    countOne++;
-    slides[0].style.backgroundImage = `url(${images[0][countOne]})`;
-    slides[0].style.transition = `0.2s`;
-    if (countOne > images[0].length - 1) {
-        countOne = 0;
-        slides[0].style.backgroundImage = `url(${images[0][countOne]})`;
-        slides[0].style.transition = `0.2s`;
-    }
+// images.forEach((images, indexImages) => {
+
+
+leftKey.forEach((leftKey, index) => {
+    let countOne = 0;
+    leftKey.addEventListener('click',
+        left = () => {
+            countOne--;
+            slides[index].style.backgroundImage = `url(${images[index][countOne]})`;
+            slides[index].style.transition = `0.5s`;
+            if (countOne < 0) {
+                countOne = images[index].length - 1;
+                slides[index].style.backgroundImage = `url(${images[index][countOne]})`;
+                slides[index].style.transition = `0.5s`;
+            }
+            return countOne;
+        });
 })
 
-countTwo = 0;
-leftKey[1].addEventListener('click', () => {
-    countTwo--;
-    slides[1].style.backgroundImage = `url(${images[1][countTwo]})`;
-    slides[1].style.transition = `0.2s`;
-    if (countTwo < 0) {
-        countTwo = images[1].length - 1;
-        slides[1].style.backgroundImage = `url(${images[1][countTwo]})`;
-        slides[1].style.transition = `0.2s`;
-    }
-});
-rightKey[1].addEventListener('click', () => {
-    countTwo++;
-    slides[1].style.backgroundImage = `url(${images[1][countTwo]})`;
-    slides[1].style.transition = `0.2s`;
-    if (countTwo > images[1].length - 1) {
-        countTwo = 0;
-        slides[1].style.backgroundImage = `url(${images[1][countTwo]})`;
-        slides[1].style.transition = `0.2s`;
-    }
+rightKey.forEach((rightKey, index) => {
+    let countOne = 0;
+    rightKey.addEventListener('click',
+        right = () => {
+            countOne++;
+            slides[index].style.backgroundImage = `url(${images[index][countOne]})`;
+            slides[index].style.transition = `0.5s`;
+            if (countOne > images[index].length - 1) {
+                countOne = 0;
+                slides[index].style.backgroundImage = `url(${images[index][countOne]})`;
+                slides[index].style.transition = `0.5s`;
+            }
+            return countOne;
+        })
 })
-
-countThree = 0;
-leftKey[2].addEventListener('click', () => {
-    countThree--;
-    slides[2].style.backgroundImage = `url(${images[2][countThree]})`;
-    slides[2].style.transition = `0.2s`;
-    if (countThree < 0) {
-        countThree = images[2].length - 1;
-        slides[2].style.backgroundImage = `url(${images[2][countThree]})`;
-        slides[2].style.transition = `0.2s`;
-    }
-});
-rightKey[2].addEventListener('click', () => {
-    countThree++;
-    slides[2].style.backgroundImage = `url(${images[2][countThree]})`;
-    slides[2].style.transition = `0.2s`;
-    if (countThree > images[2].length - 1) {
-        countThree = 0;
-        slides[2].style.backgroundImage = `url(${images[2][countThree]})`;
-        slides[2].style.transition = `0.2s`;
-    }
-})
-
-
-countFour = 0;
-leftKey[3].addEventListener('click', () => {
-    countFour--;
-    slides[3].style.backgroundImage = `url(${images[3][countFour]})`;
-    slides[3].style.transition = `0.2s`;
-    if (countFour < 0) {
-        countFour = images[3].length - 1;
-        slides[3].style.backgroundImage = `url(${images[3][countFour]})`;
-        slides[3].style.transition = `0.2s`;
-    }
-});
-rightKey[3].addEventListener('click', () => {
-    countFour++;
-    slides[3].style.backgroundImage = `url(${images[3][countFour]})`;
-    slides[3].style.transition = `0.2s`;
-    if (countFour > images[3].length - 1) {
-        countFour = 0;
-        slides[3].style.backgroundImage = `url(${images[3][countFour]})`;
-        slides[3].style.transition = `0.2s`;
-    }
-})
-
-
-countFive = 0;
-leftKey[4].addEventListener('click', () => {
-    countFive--;
-    slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
-    slides[4].style.transition = `0.2s`;
-    if (countFive < 0) {
-        countFive = images[4].length - 1;
-        slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
-        slides[4].style.transition = `0.2s`;
-    }
-});
-rightKey[4].addEventListener('click', () => {
-    countFive++;
-    slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
-    slides[4].style.transition = `0.2s`;
-    if (countFive > images[4].length - 1) {
-        countFive = 0;
-        slides[4].style.backgroundImage = `url(${images[4][countFive]})`;
-        slides[4].style.transition = `0.2s`;
-    }
-})
-
-
-countSix = 0;
-leftKey[5].addEventListener('click', () => {
-    countSix--;
-    slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
-    slides[5].style.transition = `0.2s`;
-    if (countSix < 0) {
-        countSix = images[5].length - 1;
-        slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
-        slides[5].style.transition = `0.2s`;
-    }
-});
-rightKey[5].addEventListener('click', () => {
-    countSix++;
-    slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
-    slides[5].style.transition = `0.2s`;
-    if (countSix > images[5].length - 1) {
-        countSix = 0;
-        slides[5].style.backgroundImage = `url(${images[5][countSix]})`;
-        slides[5].style.transition = `0.2s`;
-    }
-})
-
 
 // Home
 

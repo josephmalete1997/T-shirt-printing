@@ -10,6 +10,8 @@
     width: 90%;
     margin-left: 5%;
     height: 500px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
 }
 
 .products-panel {
@@ -37,12 +39,14 @@
     float: left;
     background: #ccc;
     padding: 5px;
+    cursor: pointer;
 }
 
 .right {
     float: right;
     background: #ccc;
     padding: 5px;
+    cursor: pointer;
 }
 
 @media screen and (max-width:600px) {
