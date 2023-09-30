@@ -315,8 +315,37 @@ function addToCart() {
 
     // Add click event listeners to all "Add to Cart" buttons
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    addToCartButtons.forEach(button => {
+    addToCartButtons.forEach((button, index) => {
         button.addEventListener('click', addItem)
+    });
+
+    const load = document.querySelectorAll('.loadersAdd');
+    const loadCircles = document.querySelectorAll('.loadersAdd .loader');
+    const addCount = document.querySelectorAll('.count');
+
+    addToCartButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            load[index].style.display = "flex";
+            loadCircles[index].style.display = "block";
+            button.innerHTML = load[index].outerHTML;
+            setTimeout(() => {
+                setTimeout(() => {
+                    addCount[index].innerHTML = `<span class="count-up"></span>`
+                    button.innerHTML = `
+                    <i class="fa-solid fa-cart-plus"></i> Add item
+            <div class="loadersAdd">
+                <div class="loader"></div>
+                <h1 class="count">
+                     <span class="count-up"></span>
+                 </h1>
+            </div>
+                    `;
+                }, 800);
+                loadCircles[index].style.display = "none";
+                addCount[index].innerHTML = `<i class = "fa-solid fa-check"></i>`;
+                button.innerHTML = addCount[index].innerHTML;
+            }, 1000);
+        })
     });
 
     document.getElementById("cart-open").addEventListener('click',
@@ -337,32 +366,8 @@ function addToCart() {
     )
     let count = 0;
 
-
     // Function to handle adding items to the cart
-    function addItem(event) {
-        //Loaders
-        function loading() {
-            count++;
-            const addLoad = document.querySelectorAll('.loadersAdd');
-            const addCount = document.querySelectorAll('.loadersAdd .count');
-            addLoad.forEach((addLoad, index) => {
-                addLoad.style.display = "flex";
-            })
-        }
-        let x = setInterval(loading, 10);
-        setTimeout(() => {
-            setTimeout(() => {
-                document.querySelector('.count').innerHTML = `<span class="count-up"></span>`
-                clearInterval(x);
-                count = 0;
-                document.querySelector('#loaders').style.display = "none";
-            }, 800);
-
-            document.querySelector('.count').innerHTML = `<i class = "fa-solid fa-check"></i>`;
-
-        }, 1000);
-        //----------
-
+    function addItem(event, load) {
         const product = event.target.parentElement;
         const productId = product.getAttribute('data-id');
         const productName = products[productId].name;
@@ -493,11 +498,5 @@ function addToCart() {
     // Display the initial cart contents when the page loads
     document.getElementById("cart-count").innerHTML = displayCart();
 }
-// return (
-//     products
-// )
-
-
-// 
 
 export { addToCart };
