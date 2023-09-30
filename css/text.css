@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 400px;
     margin-bottom: 50px;
 }
 
@@ -31,7 +31,7 @@
 .text-paragraph {
     width: 50%;
     background: white;
-    padding: 10px;
+    padding: 10px 10px 40px 10px;
     border-left: 5px solid rgb(255, 207, 50);
     display: none;
     transition: 1s;
@@ -58,6 +58,16 @@
     color: orange;
 }
 
+
+/* Items descriptions */
+
+.description_items {
+    color: rgb(109, 109, 109);
+    margin-left: 20px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
 .no_display .fa {
     display: block;
     margin-right: 20px;
@@ -67,16 +77,47 @@
     color: orange;
 }
 
+
+/* Adding items */
+
+.add_item {
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 24px;
+    border: none;
+    margin-top: 295px;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: cell;
+    position: absolute;
+}
+
 @media screen and (max-width:600px) {
+    .text-details {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
     .text-title,
     .no_display {
         height: 30px;
         padding: 10px;
-        width: 90%;
+        width: 85%;
         font-size: 20px;
     }
     .text-paragraph {
         padding: 10px;
-        width: 90%;
+        width: 85%;
+        padding: 10px 10px 40px 10px;
+    }
+    .description_items {
+        color: rgb(109, 109, 109);
+        text-align: center;
+        font-size: 24px;
+    }
+    .add_item {
+        margin-top: 310px;
+        border-radius: 10px;
+        cursor: cell;
     }
 }

@@ -2,6 +2,7 @@ let slides = document.querySelectorAll(".products-panel");
 let leftKey = document.querySelectorAll(".left");
 let rightKey = document.querySelectorAll(".right");
 
+
 //sublimation images
 const images = [
     ["printing/GZ1.jpg", "printing/GZ1.png", "printing/GZ2.jpg", "printing/GZ4.png", "printing/GZ5.jpg", "printing/GZ7.jpg", "printing/GZ8.jpg"],
@@ -21,6 +22,21 @@ slides.forEach((slides, index) => {
     slides.style.backgroundRepeat = "no-repeat";
     slides.style.backgroundPosition = "center";
     slides.style.transition = `0.5s`;
+    slides.setAttribute("data-id", `brand${index+1}`);
+});
+const description = ["Gazebos and banners", "Sports jerseys", "Custom hoodies", "Matric and Grade 7's t-shirst", "Matric Jackets", "Coffee mugs", "cellphone pouches", "Bottles"];
+const caption = document.querySelectorAll(".slide");
+
+slides.forEach((slides, index) => {
+    let captionText = document.createElement("p");
+    let addItemToCart = document.createElement("button");
+    addItemToCart.setAttribute("class", "add-to-cart");
+    addItemToCart.classList.add("add_item");
+    captionText.setAttribute("class", "description_items");
+    captionText.innerHTML = description[index];
+    addItemToCart.innerHTML = `<i class="fa-solid fa-cart-plus"></i>  Add item`
+
+    caption[index].append(captionText, addItemToCart);
 });
 // images.forEach((images, indexImages) => {
 
