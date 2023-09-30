@@ -38,7 +38,14 @@ function getItems(UniformItems, TextItem) {
             const container = document.getElementById("category");
             borderHolder.innerHTML = `<i class='fa-regular fa-heart'></i>
             <div class="item-description">${TextItem[index]}</div>
-            <button class="add-to-cart add"><i class="fa-solid fa-cart-plus"></i>  Add item</button>
+            <button class="add-to-cart add"><i class="fa-solid fa-cart-plus"></i> Add item
+            <div class="loadersAdd">
+                <div class="loader"></div>
+                <h1 class="count">
+                     <span class="count-up"></span>
+                 </h1>
+            </div>
+            </button>
             `;
             borderHolder.style.backgroundImage = `url(${UniformItems})`;
             borderHolder.style.backgroundPositionY = `10px`;

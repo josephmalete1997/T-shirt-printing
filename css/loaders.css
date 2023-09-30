@@ -12,6 +12,27 @@
     z-index: 186;
 }
 
+.loadersAdd {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 250;
+    padding-left: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadersAdd .loader {
+    border: 5px solid black;
+    /* Light grey */
+    border-top: 5px solid orange;
+    /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin .5s linear infinite;
+}
+
 #loaders .count {
     text-align: center;
     margin: auto;

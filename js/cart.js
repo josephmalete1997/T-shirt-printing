@@ -305,7 +305,12 @@ function addToCart() {
         i8: {
             name: `<h3>Long sleeve</h3><h4>Gold Shirt</h4>`,
             image: "Uniform/CategoryI/i8.jpg"
-        }
+        },
+        //Branding
+        brand1: {
+            name: `<h3>Gazebos and banners</h4>`,
+            image: "printing/GZ1.jpg"
+        },
     };
 
     // Add click event listeners to all "Add to Cart" buttons
@@ -332,18 +337,22 @@ function addToCart() {
     )
     let count = 0;
 
-    function loading() {
-        count++;
-        document.querySelector('#loaders').style.display = "flex";
-        document.querySelector('.count-up').innerHTML = `${count}`;
-    }
+
     // Function to handle adding items to the cart
     function addItem(event) {
         //Loaders
+        function loading() {
+            count++;
+            const addLoad = document.querySelectorAll('.loadersAdd');
+            const addCount = document.querySelectorAll('.loadersAdd .count');
+            addLoad.forEach((addLoad, index) => {
+                addLoad.style.display = "flex";
+            })
+        }
         let x = setInterval(loading, 10);
         setTimeout(() => {
             setTimeout(() => {
-                document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`
+                document.querySelector('.count').innerHTML = `<span class="count-up"></span>`
                 clearInterval(x);
                 count = 0;
                 document.querySelector('#loaders').style.display = "none";
@@ -366,7 +375,6 @@ function addToCart() {
 
         // Check if cart already exists in localStorage
         let cart = JSON.parse(localStorage.getItem('cart-display')) || [];
-
         // Check if the item is already in the cart
         const existingCartItemIndex = cart.findIndex(item => item.id === productId);
 

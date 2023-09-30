@@ -16,11 +16,7 @@ document.querySelector(".fa-bars").addEventListener('click', () => {
         navA.forEach((navA) => {
             navA.style.color = "black";
             navA.style.transition = "2s";
-
         })
-        nav.style.backgroundSize = "100%";
-        nav.style.backgroundPositionX = "-500px";
-        nav.style.transition = "2s";
     }, 3000);
 }, 1000);
 

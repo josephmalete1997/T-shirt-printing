@@ -81,6 +81,9 @@
     border: none;
     cursor: cell;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .borderHolder .add:hover {
