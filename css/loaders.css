@@ -23,6 +23,10 @@
     position: absolute;
 }
 
+.fa-check {
+    color: orange;
+}
+
 .loadersAdd .loader {
     border: 5px solid black;
     /* Light grey */

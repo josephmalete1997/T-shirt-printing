@@ -361,10 +361,9 @@ function addToCart() {
             document.getElementById("cart-close").style.display = "none";
             document.getElementById("cart-container").style.left = "100%";
             // document.getElementById("content").style.display = "block";
-            document.querySelector('.count').innerHTML = `<span class="count-up">0</span>%`;
+            document.querySelector('.count').innerHTML = `<span class="count-up"></span>`;
         }
     )
-    let count = 0;
 
     // Function to handle adding items to the cart
     function addItem(event, load) {
@@ -406,11 +405,11 @@ function addToCart() {
 
     //+++++++++
     // loading removing
+    count = 0;
+
     function loadingRemove() {
-        count++;
         document.querySelector('#loaders').style.display = "flex";
-        document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
-        return count;
+        document.querySelector('.count-up').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
     }
     // Function to handle deleting items from the cart
     function deleteCartItem(productId) {
@@ -418,15 +417,11 @@ function addToCart() {
 
         // Find the index of the item with the given ID
         const itemIndex = cart.findIndex(item => item.id === productId);
+
         let x = setInterval(loadingRemove, 10);
         setTimeout(() => {
             clearInterval(x);
-            document.querySelector('.count').innerHTML = `<i class = "fa-solid fa-check"></i>`;
-            setTimeout(() => {
-                count = 0;
-                document.querySelector('.count').innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
-                document.querySelector('#loaders').style.display = "none";
-            }, 800);
+            document.querySelector('#loaders').style.display = "none";
         }, 700);
 
         setTimeout(() => {

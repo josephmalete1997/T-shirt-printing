@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loaders.style.opacity = op;
         loaders.style.zIndex = "186";
         document.querySelector(".count").innerHTML = `<img src="load.png" width="100%">`;
+        document.querySelector(".count").style.display = "block";
 
         return loaders;
     }
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearInterval(startStart);
             x.style.display = "none";
             x.style.opacity = "0.8";
-            document.querySelector(".count").innerHTML = ` <span class="count-up">0</span>%`;
+            document.querySelector(".count").innerHTML = `<img src="load.png" width="100%">`;
             // refresh page
             // window.location.reload();
             // Store the active section in localStorage
