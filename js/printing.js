@@ -30,11 +30,23 @@ const caption = document.querySelectorAll(".slide");
 slides.forEach((slides, index) => {
     let captionText = document.createElement("p");
     let addItemToCart = document.createElement("button");
+    addItemToCart.style.width = "200px";
+    addItemToCart.style.height = "50px";
+    addItemToCart.style.display = "flex";
+    addItemToCart.style.justifyContent = "center";
+    addItemToCart.style.alignItems = "center";
     addItemToCart.setAttribute("class", "add-to-cart");
     addItemToCart.classList.add("add_item");
     captionText.setAttribute("class", "description_items");
     captionText.innerHTML = description[index];
-    addItemToCart.innerHTML = `<i class="fa-solid fa-cart-plus"></i>  Add item`
+    addItemToCart.innerHTML = `<i class="fa-solid fa-cart-plus"></i>  Add item
+    <div class="loadersAdd">
+                <div class="loader"></div>
+                <h1 class="count">
+                     <span class="count-up"></span>
+                 </h1>
+            </div>
+    `
 
     caption[index].append(captionText, addItemToCart);
 });
