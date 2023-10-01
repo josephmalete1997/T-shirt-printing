@@ -39,6 +39,7 @@
         height: 200px;
         background-size: cover;
         background-repeat: no-repeat;
+        background-position-x: 40%;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         transition: 0.5s ease-in-out;
         display: flex;

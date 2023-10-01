@@ -23,7 +23,7 @@ body {
 
 #header #mySidenav {
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     margin-top: 0px;
 }
 
