@@ -130,4 +130,8 @@ body {
         margin-left: -50px;
         position: absolute;
     }
+    body {
+        width: 100%;
+        margin: 0%;
+    }
 }
