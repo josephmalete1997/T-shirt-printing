@@ -1,35 +1,33 @@
-// script.js
-const container = document.querySelector('.scroll');
-const content = document.querySelector('#horizontal-scroll');
+let homeSlide = document.querySelector(".home_slide_image");
+const homeSlideArray = ["css/H1.jpg", "css/H2.jpg", "css/H3.jpg"];
 
-let isDragging = false;
-let startPosition = 0;
-let scrollLeft = 0;
+for (let i = 0; i < homeSlideArray.length; i++) {
+    const dots = document.createElement('div');
+    dots.setAttribute('class', 'dots');
+    homeSlide.append(dots);
+}
 
-container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startPosition = e.clientX;
-    scrollLeft = content.scrollLeft;
+let countNew = 0;
+// let countNew = Math.floor(Math.random() * homeSlideArray.length);
+homeSlide.style.backgroundImage = `url(${homeSlideArray[countNew]})`;
+const dotsItems = document.querySelectorAll('.dots');
 
-    // Add a CSS class to change the cursor when dragging
-    container.classList.add('grabbing');
-});
+function dot() {
+    homeSlide.style.backgroundImage = `url(${homeSlideArray[countNew]})`;
+    if (countNew > homeSlideArray.length - 1) {
+        countNew = 0;
+    }
+    for (let i = 0; i < dotsItems.length; i++) {
+        dotsItems[i].classList.remove('active');
+    }
+    dotsItems[countNew].classList.add('active');
+    homeSlide.style.backgroundImage = `url(${homeSlideArray[countNew]})`;
+}
 
-container.addEventListener('mouseup', () => {
-    isDragging = false;
+function changeImages() {
+    countNew++;
 
-    // Remove the cursor style
-    container.classList.remove('grabbing');
-});
-
-container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-
-    const deltaX = e.clientX - startPosition;
-    content.scrollLeft = scrollLeft - deltaX;
-});
-
-// Prevent the default drag-and-drop behavior on the content
-content.addEventListener('dragstart', (e) => {
-    e.preventDefault();
-});
+    // countNew = Math.floor(Math.random() * homeSlideArray.length)
+    dot();
+}
+setInterval(changeImages, 2500);
