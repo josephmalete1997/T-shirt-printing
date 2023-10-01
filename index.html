@@ -328,9 +328,13 @@
         <div class="container-footer">
             <div class="footer-content">
                 <div class="footer-info">
-                    <p>&copy; 2023 Helgeo Printshop. All Rights Reserved.</p>
+                    <p>&copy;<span id="year"></span> Helgeo Printshop. All Rights Reserved.</p>
                     <h3> Chris Hani Road, Bela-Bela, 0480(Limpopo) Next to Dept. of Education (Between Afican Bank and Pharmacy)</h3>
                 </div>
+                <script>
+                    const yearCurrent = document.getElementById(year);
+                    yearCurrent.innerHTML = new Date().getFullYear;
+                </script>
                 <div class="footer-info">
                 </div>
                 <div class="footer-social">
